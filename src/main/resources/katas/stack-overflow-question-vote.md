@@ -11,10 +11,9 @@ We don't care about the infrastructure layer here. Business logic is our only
 Try to follow these requirements step-by-step, writing only the code required
  to implement the current and previous steps. Do not think ahead.
 
-1. Question can be posted by author
-2. Question can be upvoted by any user (except of the author), but no more than 
+1. Question can be upvoted by any user (except of the author), but no more than 
 once
-3. Question can be downvoted by any user (except of the author), but no 
+2. Question can be downvoted by any user (except of the author), but no 
 more than once
-4. When question is upvoted/downvoted, it can be downvoted/upvoted again to 
-change the state to "neutral"
+3. When question is upvoted/downvoted, it can be downvoted/upvoted again by 
+the same user to change the state to "neutral" (as if the user never voted)
