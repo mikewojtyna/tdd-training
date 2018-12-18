@@ -38,8 +38,6 @@ class StringCalculator {
 			input = input.substring(newLineIndex + 1);
 		}
 		return Stream.of(input.split(supportedDelimites))
-			.mapToInt(s -> Integer.valueOf(s))
-			.mapToObj(Integer::valueOf)
-			.collect(Collectors.toList());
+			.map(Integer::valueOf).collect(Collectors.toList());
 	}
 }
