@@ -20,7 +20,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @SpringJUnitConfig
-@WebMvcTest
+@WebMvcTest(controllers = RestProfileController.class)
 class ProfileControllerIntegrationTest {
 
 	@Autowired

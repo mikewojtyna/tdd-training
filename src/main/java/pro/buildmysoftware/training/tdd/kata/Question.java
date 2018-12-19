@@ -6,8 +6,8 @@ import java.util.Map;
 public class Question {
 	private int score;
 	private User author;
-	// private Collection<User> voters;
-	private Map<User, Integer> voters;
+	private Map<String, Integer> voters;
+	private String id;
 
 	public Question(int score, User author) {
 		this.score = score;
@@ -27,13 +27,17 @@ public class Question {
 		changeScoreBy(-1, user);
 	}
 
+	public String getId() {
+		return id;
+	}
+
 	private void changeScoreBy(int scoreChange, User user) {
 		boolean userIsDifferentThanAuthor = !author.equals(user);
-		Integer oldUserScore = voters.getOrDefault(user, 0);
+		Integer oldUserScore = voters.getOrDefault(user.getName(), 0);
 		int scoreAfterChange = oldUserScore + scoreChange;
 		if (isVoteAllowed(scoreAfterChange) && userIsDifferentThanAuthor) {
 			score += scoreChange;
-			voters.put(user, scoreAfterChange);
+			voters.put(user.getName(), scoreAfterChange);
 		}
 	}
 
