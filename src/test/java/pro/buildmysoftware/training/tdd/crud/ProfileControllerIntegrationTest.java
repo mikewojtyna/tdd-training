@@ -71,8 +71,6 @@ class ProfileControllerIntegrationTest {
 	}
 
 	private Profile profileWithName(String firstName) {
-		Profile profile = new Profile();
-		profile.setName(firstName);
-		return profile;
+		return ProfileTestFixture.profileWithName(firstName);
 	}
 }
