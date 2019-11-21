@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.DirtiesContext;
-import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -13,12 +12,11 @@ import java.util.Collection;
 import static org.assertj.core.api.Assertions.assertThat;
 import static pro.buildmysoftware.training.tdd.crud.ProfileTestFixture.profileWithName;
 
-@SpringJUnitConfig
 @SpringBootTest
 // Dirties context is used to create a completely new spring context (e.g.
 // new db etc). In this case, the new context is created before each test
 // method.
-@DirtiesContext(methodMode = DirtiesContext.MethodMode.BEFORE_METHOD)
+@DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
 class ProfileServiceIntegrationTest {
 
 	@Autowired
